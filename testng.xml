@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="SauceDemo Test Suite">
+
+    <listeners>
+        <!-- ✅ Extent Report Listener attached here -->
+        <listener class-name=
+            "utilities.ExtentReportListener"/>
+    </listeners>
+
+    <test name="E2E Tests">
+        <classes>
+            <class name="samplecode.E2ESauceDemo"/>
+        </classes>
+    </test>
+
+</suite>
