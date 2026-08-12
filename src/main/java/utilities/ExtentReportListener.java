@@ -1,11 +1,15 @@
 package utilities;
 
-import com.aventstack.extentreports.ExtentReports;
-import com.aventstack.extentreports.ExtentTest;
-import com.aventstack.extentreports.Status;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
+
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.MediaEntityBuilder;
+import com.aventstack.extentreports.Status;
+
+import Base.Baseclass;
 
 public class ExtentReportListener implements ITestListener {
 
@@ -33,12 +37,35 @@ public class ExtentReportListener implements ITestListener {
         extentTest.get().log(Status.PASS,
             "Test Passed ✅");
     }
-
-    // When test FAILS
+    
     @Override
     public void onTestFailure(ITestResult result) {
-        extentTest.get().log(Status.FAIL,
-            "Test Failed ❌");
+
+        // Get test name
+        String testName = result.getMethod()
+            .getMethodName();
+
+        // Get driver from test class
+        Object testInstance = result.getInstance();
+        Baseclass baseclass = (Baseclass) testInstance;
+
+        // ✅ Take screenshot on failure!
+        String screenshotPath = ScreenshotUtility
+            .takeScreenshot(baseclass.driver, testName);
+
+        // ✅ Attach screenshot to report!
+        try {
+            extentTest.get().fail(
+                "Test Failed ❌",
+                MediaEntityBuilder
+                    .createScreenCaptureFromPath(
+                        screenshotPath).build());
+        } catch (Exception e) {
+            extentTest.get().log(Status.FAIL,
+                "Test Failed ❌");
+        }
+
+        // Log the error
         extentTest.get().log(Status.FAIL,
             result.getThrowable());
     }
