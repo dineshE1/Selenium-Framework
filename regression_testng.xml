@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suite name="Regression Suite">
+    <listeners>
+        <listener class-name=
+            "utilities.ExtentReportListener"/>
+    </listeners>
+
+    <test name="Regression Tests">
+        <groups>
+            <run>
+                <include name="regression"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="samplecode.E2ESauceDemo"/>
+        </classes>
+    </test>
+</suite>

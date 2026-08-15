@@ -13,8 +13,8 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import utilities.ConfigReader;
@@ -22,7 +22,7 @@ import utilities.ConfigReader;
 public class Baseclass {
 	public WebDriver driver;
 	public WebDriverWait wait;
-	@BeforeTest
+	@BeforeClass(alwaysRun = true)
 	public void setup() {
 			String browsername = ConfigReader.get("browser"); 
 			
@@ -64,7 +64,7 @@ public class Baseclass {
 		return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
 	}
 	
-	@AfterTest
+	@AfterClass(alwaysRun = true)
 	public void closeBrowser() {
 		driver.quit();
 	}

@@ -2,52 +2,61 @@
 <testng-results ignored="0" total="7" passed="7" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-08-12T08:09:33 IST" name="SauceDemo Test Suite" finished-at="2026-08-12T08:09:38 IST" duration-ms="5337">
+  <suite started-at="2026-08-15T17:37:55 IST" name="Regression Suite" finished-at="2026-08-15T17:38:00 IST" duration-ms="5200">
     <groups>
+      <group name="regression">
+        <method signature="E2ESauceDemo.Login()[pri:0, instance:samplecode.E2ESauceDemo@43015c69]" name="Login" class="samplecode.E2ESauceDemo"/>
+        <method signature="E2ESauceDemo.verifyPageTitle()[pri:0, instance:samplecode.E2ESauceDemo@43015c69]" name="verifyPageTitle" class="samplecode.E2ESauceDemo"/>
+        <method signature="E2ESauceDemo.addProduct()[pri:0, instance:samplecode.E2ESauceDemo@43015c69]" name="addProduct" class="samplecode.E2ESauceDemo"/>
+        <method signature="E2ESauceDemo.verifyCartScreen()[pri:0, instance:samplecode.E2ESauceDemo@43015c69]" name="verifyCartScreen" class="samplecode.E2ESauceDemo"/>
+        <method signature="E2ESauceDemo.performInfoScreen()[pri:0, instance:samplecode.E2ESauceDemo@43015c69]" name="performInfoScreen" class="samplecode.E2ESauceDemo"/>
+        <method signature="E2ESauceDemo.verifyConfirmationScreen()[pri:0, instance:samplecode.E2ESauceDemo@43015c69]" name="verifyConfirmationScreen" class="samplecode.E2ESauceDemo"/>
+        <method signature="E2ESauceDemo.verifySuccessScreen()[pri:0, instance:samplecode.E2ESauceDemo@43015c69]" name="verifySuccessScreen" class="samplecode.E2ESauceDemo"/>
+      </group> <!-- regression -->
+      <group name="smoke">
+        <method signature="E2ESauceDemo.Login()[pri:0, instance:samplecode.E2ESauceDemo@43015c69]" name="Login" class="samplecode.E2ESauceDemo"/>
+        <method signature="E2ESauceDemo.verifyPageTitle()[pri:0, instance:samplecode.E2ESauceDemo@43015c69]" name="verifyPageTitle" class="samplecode.E2ESauceDemo"/>
+      </group> <!-- smoke -->
     </groups>
-    <test started-at="2026-08-12T08:09:33 IST" name="E2E Tests" finished-at="2026-08-12T08:09:38 IST" duration-ms="5337">
+    <test started-at="2026-08-15T17:37:55 IST" name="Regression Tests" finished-at="2026-08-15T17:38:00 IST" duration-ms="5200">
       <class name="samplecode.E2ESauceDemo">
-        <test-method is-config="true" signature="setup()[pri:0, instance:samplecode.E2ESauceDemo@23202fce]" started-at="2026-08-12T08:09:33 IST" name="setup" finished-at="2026-08-12T08:09:36 IST" duration-ms="3536" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:samplecode.E2ESauceDemo@43015c69]" started-at="2026-08-15T17:37:55 IST" name="setup" finished-at="2026-08-15T17:37:58 IST" duration-ms="3078" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method is-config="true" signature="initPages()[pri:0, instance:samplecode.E2ESauceDemo@23202fce]" started-at="2026-08-12T08:09:36 IST" name="initPages" finished-at="2026-08-12T08:09:36 IST" depends-on-methods="Base.Baseclass.setup" duration-ms="6" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- initPages -->
-        <test-method signature="Login()[pri:0, instance:samplecode.E2ESauceDemo@23202fce]" started-at="2026-08-12T08:09:36 IST" name="Login" finished-at="2026-08-12T08:09:37 IST" duration-ms="377" status="PASS">
+        <test-method signature="Login()[pri:0, instance:samplecode.E2ESauceDemo@43015c69]" started-at="2026-08-15T17:37:58 IST" name="Login" finished-at="2026-08-15T17:37:59 IST" duration-ms="708" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Login -->
-        <test-method signature="verifyPageTitle()[pri:0, instance:samplecode.E2ESauceDemo@23202fce]" started-at="2026-08-12T08:09:37 IST" name="verifyPageTitle" finished-at="2026-08-12T08:09:37 IST" depends-on-methods="samplecode.E2ESauceDemo.Login" duration-ms="88" status="PASS">
+        <test-method signature="verifyPageTitle()[pri:0, instance:samplecode.E2ESauceDemo@43015c69]" started-at="2026-08-15T17:37:59 IST" name="verifyPageTitle" finished-at="2026-08-15T17:37:59 IST" depends-on-methods="samplecode.E2ESauceDemo.Login" duration-ms="103" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyPageTitle -->
-        <test-method signature="addProduct()[pri:0, instance:samplecode.E2ESauceDemo@23202fce]" started-at="2026-08-12T08:09:37 IST" name="addProduct" finished-at="2026-08-12T08:09:37 IST" depends-on-methods="samplecode.E2ESauceDemo.verifyPageTitle" duration-ms="359" status="PASS">
+        <test-method signature="addProduct()[pri:0, instance:samplecode.E2ESauceDemo@43015c69]" started-at="2026-08-15T17:37:59 IST" name="addProduct" finished-at="2026-08-15T17:37:59 IST" depends-on-methods="samplecode.E2ESauceDemo.verifyPageTitle" duration-ms="276" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- addProduct -->
-        <test-method signature="verifyCartScreen()[pri:0, instance:samplecode.E2ESauceDemo@23202fce]" started-at="2026-08-12T08:09:37 IST" name="verifyCartScreen" finished-at="2026-08-12T08:09:37 IST" depends-on-methods="samplecode.E2ESauceDemo.addProduct" duration-ms="170" status="PASS">
+        <test-method signature="verifyCartScreen()[pri:0, instance:samplecode.E2ESauceDemo@43015c69]" started-at="2026-08-15T17:37:59 IST" name="verifyCartScreen" finished-at="2026-08-15T17:37:59 IST" depends-on-methods="samplecode.E2ESauceDemo.addProduct" duration-ms="124" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyCartScreen -->
-        <test-method signature="performInfoScreen()[pri:0, instance:samplecode.E2ESauceDemo@23202fce]" started-at="2026-08-12T08:09:37 IST" name="performInfoScreen" finished-at="2026-08-12T08:09:38 IST" depends-on-methods="samplecode.E2ESauceDemo.verifyCartScreen" duration-ms="229" status="PASS">
+        <test-method signature="performInfoScreen()[pri:0, instance:samplecode.E2ESauceDemo@43015c69]" started-at="2026-08-15T17:37:59 IST" name="performInfoScreen" finished-at="2026-08-15T17:37:59 IST" depends-on-methods="samplecode.E2ESauceDemo.verifyCartScreen" duration-ms="312" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- performInfoScreen -->
-        <test-method signature="verifyConfirmationScreen()[pri:0, instance:samplecode.E2ESauceDemo@23202fce]" started-at="2026-08-12T08:09:38 IST" name="verifyConfirmationScreen" finished-at="2026-08-12T08:09:38 IST" depends-on-methods="samplecode.E2ESauceDemo.performInfoScreen" duration-ms="183" status="PASS">
+        <test-method signature="verifyConfirmationScreen()[pri:0, instance:samplecode.E2ESauceDemo@43015c69]" started-at="2026-08-15T17:37:59 IST" name="verifyConfirmationScreen" finished-at="2026-08-15T17:38:00 IST" depends-on-methods="samplecode.E2ESauceDemo.performInfoScreen" duration-ms="201" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyConfirmationScreen -->
-        <test-method signature="verifySuccessScreen()[pri:0, instance:samplecode.E2ESauceDemo@23202fce]" started-at="2026-08-12T08:09:38 IST" name="verifySuccessScreen" finished-at="2026-08-12T08:09:38 IST" depends-on-methods="samplecode.E2ESauceDemo.verifyConfirmationScreen" duration-ms="97" status="PASS">
+        <test-method signature="verifySuccessScreen()[pri:0, instance:samplecode.E2ESauceDemo@43015c69]" started-at="2026-08-15T17:38:00 IST" name="verifySuccessScreen" finished-at="2026-08-15T17:38:00 IST" depends-on-methods="samplecode.E2ESauceDemo.verifyConfirmationScreen" duration-ms="125" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifySuccessScreen -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:samplecode.E2ESauceDemo@23202fce]" started-at="2026-08-12T08:09:38 IST" name="closeBrowser" finished-at="2026-08-12T08:09:38 IST" duration-ms="229" status="PASS">
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:samplecode.E2ESauceDemo@43015c69]" started-at="2026-08-15T17:38:00 IST" name="closeBrowser" finished-at="2026-08-15T17:38:00 IST" duration-ms="194" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
       </class> <!-- samplecode.E2ESauceDemo -->
-    </test> <!-- E2E Tests -->
-  </suite> <!-- SauceDemo Test Suite -->
+    </test> <!-- Regression Tests -->
+  </suite> <!-- Regression Suite -->
 </testng-results>

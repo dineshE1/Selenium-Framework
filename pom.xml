@@ -16,6 +16,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.release>17</maven.compiler.release>
 	</properties>
+	
 
 	<dependencyManagement>
 		<dependencies>
@@ -44,13 +45,6 @@
 			<groupId>io.github.bonigarcia</groupId>
 			<artifactId>webdrivermanager</artifactId>
 			<version>6.3.4</version>
-		</dependency>
-		<!--  https://mvnrepository.com/artifact/org.testng/testng  -->
-		<dependency>
-			<groupId>org.testng</groupId>
-			<artifactId>testng</artifactId>
-			<version>7.7.1</version>
-			<scope>test</scope>
 		</dependency>
 		<!--  Apache POI  -->
 		<dependency>
@@ -89,7 +83,6 @@
 			<groupId>org.testng</groupId>
 			<artifactId>testng</artifactId>
 			<version>7.7.1</version>
-			<scope>test</scope>
 		</dependency>
 		
 	</dependencies>
@@ -115,10 +108,6 @@
 					<version>3.13.0</version>
 				</plugin>
 				<plugin>
-					<artifactId>maven-surefire-plugin</artifactId>
-					<version>3.3.0</version>
-				</plugin>
-				<plugin>
 					<artifactId>maven-jar-plugin</artifactId>
 					<version>3.4.2</version>
 				</plugin>
@@ -140,6 +129,11 @@
 					<artifactId>maven-project-info-reports-plugin</artifactId>
 					<version>3.6.1</version>
 				</plugin>
+				<plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <version>3.3.0</version>
+        </plugin>
 			</plugins>
 		</pluginManagement>
 	</build>
