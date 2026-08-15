@@ -41,31 +41,42 @@ public class ExtentReportListener implements ITestListener {
     @Override
     public void onTestFailure(ITestResult result) {
 
-        // Get test name
         String testName = result.getMethod()
             .getMethodName();
 
-        // Get driver from test class
+        // ✅ Get test instance
         Object testInstance = result.getInstance();
-        Baseclass baseclass = (Baseclass) testInstance;
 
-        // ✅ Take screenshot on failure!
-        String screenshotPath = ScreenshotUtility
-            .takeScreenshot(baseclass.driver, testName);
+        // ✅ Check if instance is Baseclass
+        if (testInstance instanceof Baseclass) {
 
-        // ✅ Attach screenshot to report!
-        try {
-            extentTest.get().fail(
-                "Test Failed ❌",
-                MediaEntityBuilder
-                    .createScreenCaptureFromPath(
-                        screenshotPath).build());
-        } catch (Exception e) {
-            extentTest.get().log(Status.FAIL,
-                "Test Failed ❌");
+            Baseclass baseclass = (Baseclass) testInstance;
+
+            // ✅ NULL CHECK — only screenshot if driver exists!
+            if (baseclass.driver != null) {
+                String screenshotPath = ScreenshotUtility
+                    .takeScreenshot(
+                        baseclass.driver, testName);
+
+                try {
+                    extentTest.get().fail(
+                        "Test Failed ❌",
+                        MediaEntityBuilder
+                            .createScreenCaptureFromPath(
+                                screenshotPath).build());
+                } catch (Exception e) {
+                    extentTest.get().log(
+                        Status.FAIL, "Test Failed ❌");
+                }
+            } else {
+                // Driver is null — just log failure
+                extentTest.get().log(Status.FAIL,
+                    "Test Failed ❌ (Driver was null — " +
+                    "browser setup may have failed)");
+            }
         }
 
-        // Log the error
+        // Always log the error
         extentTest.get().log(Status.FAIL,
             result.getThrowable());
     }

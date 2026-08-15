@@ -2,7 +2,7 @@ package samplecode;
 
 import static org.testng.Assert.assertEquals;
 
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import Base.Baseclass;
@@ -22,7 +22,15 @@ public class E2ESauceDemo extends Baseclass{
 	ConfirmationScreen confirmationScreen;
 	SuccessScreen successScreen;
 	
-	@BeforeTest
+	@Override
+    @BeforeClass(alwaysRun = true)
+    public void setup() {
+        super.setup();
+        System.out.println("set() finished, driver = "+ driver);
+        initPages(); 
+        System.out.println("Init Page finished, login page = "+ loginPage);
+    }
+	
 	public void initPages() {
 		loginPage = new LoginPage(driver);
 		dashboardPage = new DashboardPage(driver);
@@ -33,18 +41,18 @@ public class E2ESauceDemo extends Baseclass{
 	
 	//E2E Perform Methods
 	
-	@Test
+	@Test(groups = {"smoke","regression"})
 	public void Login(){
 		loginPage.performlogin(ConfigReader.get("username"), ConfigReader.get("password"));
 	}
 	
-	@Test(dependsOnMethods ="Login")
+	@Test(dependsOnMethods ="Login",groups = {"smoke","regression"})
 	public void verifyPageTitle() {
 		assertEquals(dashboardPage.getDashboardTitle(), "Swag Labs");
 		System.out.println("Page Title Verified Successfully");
 	}
 	
-	@Test(dependsOnMethods ="verifyPageTitle")
+	@Test(dependsOnMethods ="verifyPageTitle",groups = {"regression"})
 	public void addProduct() {
 		dashboardPage.addToCart("Sauce Labs Backpack");
 		dashboardPage.addToCart("Sauce Labs Onesie");
@@ -55,7 +63,7 @@ public class E2ESauceDemo extends Baseclass{
         dashboardPage.clickCartIcon();
 	}
 	
-	@Test(dependsOnMethods ="addProduct")
+	@Test(dependsOnMethods ="addProduct",groups = {"regression"})
 	public void verifyCartScreen() {
 		assertEquals(cartScreen.verifyCartTitle(), "Your Cart");
 		cartScreen.verifyCartProduct("Sauce Labs Backpack");
@@ -64,18 +72,18 @@ public class E2ESauceDemo extends Baseclass{
 		
 	}
 	
-	@Test(dependsOnMethods ="verifyCartScreen")
+	@Test(dependsOnMethods ="verifyCartScreen",groups = {"regression"})
 	public void performInfoScreen() {
 		cartScreen.performYourInformationScreen(ConfigReader.get("firstname"), ConfigReader.get("lastname"), ConfigReader.get("postalcode"));
 	}
 	
-	@Test(dependsOnMethods = "performInfoScreen")
+	@Test(dependsOnMethods = "performInfoScreen",groups = {"regression"})
 	public void verifyConfirmationScreen() {
 		confirmationScreen.verifyConfirmationScreen();
 		confirmationScreen.clickFinishButton();
 	}
 	
-	@Test(dependsOnMethods = "verifyConfirmationScreen")
+	@Test(dependsOnMethods = "verifyConfirmationScreen",groups = {"regression"})
 	public void verifySuccessScreen() {
 		assertEquals(successScreen.verifySuccessScreenTitle(), "Thank you for your order!");
 		assertEquals(successScreen.verifySuccessScreenDescription(), "Your order has been dispatched, and will arrive just as fast as the pony can get there!");
