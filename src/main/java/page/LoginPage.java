@@ -21,6 +21,8 @@ public class LoginPage extends Baseclass{
 	By userNameField = By.id("user-name");
 	By passwordField = By.id("password");
 	By loginButton = By.id("login-button");
+	By errorMessage  = By.cssSelector(
+	        "[data-test='error']");
 	
 	// Methods
 	
@@ -43,4 +45,9 @@ public class LoginPage extends Baseclass{
 			enterPassword(password);
 			clickLoginbutton();
 	}
+	
+	public boolean isErrorMessageDisplayed() {
+        return driver.findElement(errorMessage)
+                     .isDisplayed();
+    }
 }

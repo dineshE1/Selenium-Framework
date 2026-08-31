@@ -1,62 +1,258 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="7" passed="7" failed="0" skipped="0">
+<testng-results ignored="0" total="3" passed="2" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-08-15T17:37:55 IST" name="Regression Suite" finished-at="2026-08-15T17:38:00 IST" duration-ms="5200">
+  <suite started-at="2026-08-17T21:12:20 IST" name="Default suite" finished-at="2026-08-17T21:12:29 IST" duration-ms="9318">
     <groups>
-      <group name="regression">
-        <method signature="E2ESauceDemo.Login()[pri:0, instance:samplecode.E2ESauceDemo@43015c69]" name="Login" class="samplecode.E2ESauceDemo"/>
-        <method signature="E2ESauceDemo.verifyPageTitle()[pri:0, instance:samplecode.E2ESauceDemo@43015c69]" name="verifyPageTitle" class="samplecode.E2ESauceDemo"/>
-        <method signature="E2ESauceDemo.addProduct()[pri:0, instance:samplecode.E2ESauceDemo@43015c69]" name="addProduct" class="samplecode.E2ESauceDemo"/>
-        <method signature="E2ESauceDemo.verifyCartScreen()[pri:0, instance:samplecode.E2ESauceDemo@43015c69]" name="verifyCartScreen" class="samplecode.E2ESauceDemo"/>
-        <method signature="E2ESauceDemo.performInfoScreen()[pri:0, instance:samplecode.E2ESauceDemo@43015c69]" name="performInfoScreen" class="samplecode.E2ESauceDemo"/>
-        <method signature="E2ESauceDemo.verifyConfirmationScreen()[pri:0, instance:samplecode.E2ESauceDemo@43015c69]" name="verifyConfirmationScreen" class="samplecode.E2ESauceDemo"/>
-        <method signature="E2ESauceDemo.verifySuccessScreen()[pri:0, instance:samplecode.E2ESauceDemo@43015c69]" name="verifySuccessScreen" class="samplecode.E2ESauceDemo"/>
-      </group> <!-- regression -->
-      <group name="smoke">
-        <method signature="E2ESauceDemo.Login()[pri:0, instance:samplecode.E2ESauceDemo@43015c69]" name="Login" class="samplecode.E2ESauceDemo"/>
-        <method signature="E2ESauceDemo.verifyPageTitle()[pri:0, instance:samplecode.E2ESauceDemo@43015c69]" name="verifyPageTitle" class="samplecode.E2ESauceDemo"/>
-      </group> <!-- smoke -->
+      <group name="cucumber">
+        <method signature="AbstractTestNGCucumberTests.runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runners.TestRunner@8c3b9d]" name="runScenario" class="io.cucumber.testng.AbstractTestNGCucumberTests"/>
+      </group> <!-- cucumber -->
     </groups>
-    <test started-at="2026-08-15T17:37:55 IST" name="Regression Tests" finished-at="2026-08-15T17:38:00 IST" duration-ms="5200">
-      <class name="samplecode.E2ESauceDemo">
-        <test-method is-config="true" signature="setup()[pri:0, instance:samplecode.E2ESauceDemo@43015c69]" started-at="2026-08-15T17:37:55 IST" name="setup" finished-at="2026-08-15T17:37:58 IST" duration-ms="3078" status="PASS">
+    <test started-at="2026-08-17T21:12:20 IST" name="Default test" finished-at="2026-08-17T21:12:29 IST" duration-ms="9318">
+      <class name="runners.TestRunner">
+        <test-method is-config="true" signature="setUpClass(org.testng.ITestContext)[pri:0, instance:runners.TestRunner@8c3b9d]" started-at="2026-08-17T21:12:20 IST" name="setUpClass" finished-at="2026-08-17T21:12:21 IST" duration-ms="669" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@18acfe88]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="Login()[pri:0, instance:samplecode.E2ESauceDemo@43015c69]" started-at="2026-08-15T17:37:58 IST" name="Login" finished-at="2026-08-15T17:37:59 IST" duration-ms="708" status="PASS">
+        </test-method> <!-- setUpClass -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runners.TestRunner@8c3b9d]" started-at="2026-08-17T21:12:21 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-08-17T21:12:24 IST" duration-ms="2902" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Complete purchase flow"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["SauceDemo E2E Purchase Flow"]]>
+              </value>
+            </param>
+          </params>
+          <exception class="io.cucumber.testng.UndefinedStepException">
+            <message>
+              <![CDATA[The step 'user adds "Sauce Labs Backpack" to cart' and 14 other step(s) are undefined.
+You can implement these steps using the snippet(s) below:
+
+@When("user adds {string} to cart")
+public void user_adds_to_cart(String string) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Then("cart should show {string} items")
+public void cart_should_show_items(String string) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@When("user clicks cart icon")
+public void user_clicks_cart_icon() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Then("cart page title should be {string}")
+public void cart_page_title_should_be(String string) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Then("{string} should be in cart")
+public void should_be_in_cart(String string) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@When("user clicks checkout")
+public void user_clicks_checkout() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@When("user enters first name {string}")
+public void user_enters_first_name(String string) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@When("user enters last name {string}")
+public void user_enters_last_name(String string) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@When("user enters postal code {string}")
+public void user_enters_postal_code(String string) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@When("user clicks continue")
+public void user_clicks_continue() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Then("checkout overview should be displayed")
+public void checkout_overview_should_be_displayed() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@When("user clicks finish")
+public void user_clicks_finish() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Then("success message should be {string}")
+public void success_message_should_be(String string) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[io.cucumber.testng.UndefinedStepException: The step 'user adds "Sauce Labs Backpack" to cart' and 14 other step(s) are undefined.
+You can implement these steps using the snippet(s) below:
+
+@When("user adds {string} to cart")
+public void user_adds_to_cart(String string) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Then("cart should show {string} items")
+public void cart_should_show_items(String string) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@When("user clicks cart icon")
+public void user_clicks_cart_icon() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Then("cart page title should be {string}")
+public void cart_page_title_should_be(String string) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Then("{string} should be in cart")
+public void should_be_in_cart(String string) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@When("user clicks checkout")
+public void user_clicks_checkout() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@When("user enters first name {string}")
+public void user_enters_first_name(String string) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@When("user enters last name {string}")
+public void user_enters_last_name(String string) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@When("user enters postal code {string}")
+public void user_enters_postal_code(String string) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@When("user clicks continue")
+public void user_clicks_continue() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Then("checkout overview should be displayed")
+public void checkout_overview_should_be_displayed() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@When("user clicks finish")
+public void user_clicks_finish() {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+@Then("success message should be {string}")
+public void success_message_should_be(String string) {
+    // Write code here that turns the phrase above into concrete actions
+    throw new io.cucumber.java.PendingException();
+}
+
+at io.cucumber.core.runtime.TestCaseResultObserver.assertTestCasePassed(TestCaseResultObserver.java:69)
+at io.cucumber.testng.TestCaseResultObserver.assertTestCasePassed(TestCaseResultObserver.java:23)
+at io.cucumber.testng.TestNGCucumberRunner.lambda$runScenario$1(TestNGCucumberRunner.java:133)
+at io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:137)
+at io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)
+at io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:137)
+at io.cucumber.testng.TestNGCucumberRunner.runScenario(TestNGCucumberRunner.java:129)
+at io.cucumber.testng.AbstractTestNGCucumberTests.runScenario(AbstractTestNGCucumberTests.java:35)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:741)
+at org.testng.TestRunner.run(TestRunner.java:616)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- io.cucumber.testng.UndefinedStepException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Login -->
-        <test-method signature="verifyPageTitle()[pri:0, instance:samplecode.E2ESauceDemo@43015c69]" started-at="2026-08-15T17:37:59 IST" name="verifyPageTitle" finished-at="2026-08-15T17:37:59 IST" depends-on-methods="samplecode.E2ESauceDemo.Login" duration-ms="103" status="PASS">
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runners.TestRunner@8c3b9d]" started-at="2026-08-17T21:12:24 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-08-17T21:12:27 IST" duration-ms="3319" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Valid login with correct credentials"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["SauceDemo Login"]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyPageTitle -->
-        <test-method signature="addProduct()[pri:0, instance:samplecode.E2ESauceDemo@43015c69]" started-at="2026-08-15T17:37:59 IST" name="addProduct" finished-at="2026-08-15T17:37:59 IST" depends-on-methods="samplecode.E2ESauceDemo.verifyPageTitle" duration-ms="276" status="PASS">
+        </test-method> <!-- runScenario -->
+        <test-method signature="runScenario(io.cucumber.testng.PickleWrapper,io.cucumber.testng.FeatureWrapper)[pri:0, instance:runners.TestRunner@8c3b9d]" started-at="2026-08-17T21:12:27 IST" name="runScenario" description="Runs Cucumber Scenarios" data-provider="scenarios" finished-at="2026-08-17T21:12:29 IST" duration-ms="2313" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA["Invalid login with wrong credentials"]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA["SauceDemo Login"]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- addProduct -->
-        <test-method signature="verifyCartScreen()[pri:0, instance:samplecode.E2ESauceDemo@43015c69]" started-at="2026-08-15T17:37:59 IST" name="verifyCartScreen" finished-at="2026-08-15T17:37:59 IST" depends-on-methods="samplecode.E2ESauceDemo.addProduct" duration-ms="124" status="PASS">
+        </test-method> <!-- runScenario -->
+        <test-method is-config="true" signature="tearDownClass()[pri:0, instance:runners.TestRunner@8c3b9d]" started-at="2026-08-17T21:12:29 IST" name="tearDownClass" finished-at="2026-08-17T21:12:29 IST" duration-ms="51" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyCartScreen -->
-        <test-method signature="performInfoScreen()[pri:0, instance:samplecode.E2ESauceDemo@43015c69]" started-at="2026-08-15T17:37:59 IST" name="performInfoScreen" finished-at="2026-08-15T17:37:59 IST" depends-on-methods="samplecode.E2ESauceDemo.verifyCartScreen" duration-ms="312" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- performInfoScreen -->
-        <test-method signature="verifyConfirmationScreen()[pri:0, instance:samplecode.E2ESauceDemo@43015c69]" started-at="2026-08-15T17:37:59 IST" name="verifyConfirmationScreen" finished-at="2026-08-15T17:38:00 IST" depends-on-methods="samplecode.E2ESauceDemo.performInfoScreen" duration-ms="201" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyConfirmationScreen -->
-        <test-method signature="verifySuccessScreen()[pri:0, instance:samplecode.E2ESauceDemo@43015c69]" started-at="2026-08-15T17:38:00 IST" name="verifySuccessScreen" finished-at="2026-08-15T17:38:00 IST" depends-on-methods="samplecode.E2ESauceDemo.verifyConfirmationScreen" duration-ms="125" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifySuccessScreen -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:samplecode.E2ESauceDemo@43015c69]" started-at="2026-08-15T17:38:00 IST" name="closeBrowser" finished-at="2026-08-15T17:38:00 IST" duration-ms="194" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- closeBrowser -->
-      </class> <!-- samplecode.E2ESauceDemo -->
-    </test> <!-- Regression Tests -->
-  </suite> <!-- Regression Suite -->
+        </test-method> <!-- tearDownClass -->
+      </class> <!-- runners.TestRunner -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>

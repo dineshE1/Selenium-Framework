@@ -20,8 +20,8 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import utilities.ConfigReader;
 
 public class Baseclass {
-	public WebDriver driver;
-	public WebDriverWait wait;
+	public static WebDriver driver;
+	public static WebDriverWait wait;
 	@BeforeClass(alwaysRun = true)
 	public void setup() {
 			String browsername = ConfigReader.get("browser"); 

@@ -46,9 +46,34 @@ public class CartScreen extends Baseclass{
 	
 	public void performYourInformationScreen(String firstName,String lastName,String zipCode){
 		waitforElementPresent(FirstNameField);
+		if(firstName!=null) {
 		driver.findElement(FirstNameField).sendKeys(firstName);
+		}
+		if(lastName!=null) {
 		driver.findElement(LastNameField).sendKeys(lastName);
+		}
+		if(zipCode!=null) {
 		driver.findElement(PostalCodeField).sendKeys(zipCode);
+		}
 		driver.findElement(Continue).click();
 	}
-}
+	
+	public void enterFirstname(String firstname) {
+		waitforElementPresent(FirstNameField);
+		driver.findElement(FirstNameField).sendKeys(firstname);
+	}
+	
+	public void enterLastname(String lastname) {
+		waitforElementPresent(LastNameField);
+		driver.findElement(LastNameField).sendKeys(lastname);
+	}
+	
+	public void enterPostalCode(String postalcode) {
+		waitforElementPresent(PostalCodeField);
+		driver.findElement(PostalCodeField).sendKeys(postalcode);
+	}
+	
+	public void clickContinue() {
+		driver.findElement(Continue).click();
+	}
+	}
